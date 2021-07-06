@@ -10,7 +10,7 @@ pub struct FnmConfig {
     #[structopt(
         long,
         env = "FNM_NODE_DIST_MIRROR",
-        default_value = "https://nodejs.org/dist",
+        default_value = "https://unofficial-builds.nodejs.org/download/release",
         global = true,
         hide_env_values = true
     )]
@@ -61,7 +61,7 @@ pub struct FnmConfig {
 impl Default for FnmConfig {
     fn default() -> Self {
         Self {
-            node_dist_mirror: reqwest::Url::parse("https://nodejs.org/dist/").unwrap(),
+            node_dist_mirror: reqwest::Url::parse("https://unofficial-builds.nodejs.org/download/release/").unwrap(),
             base_dir: None,
             multishell_path: None,
             log_level: LogLevel::Info,
